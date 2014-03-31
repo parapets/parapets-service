@@ -1,5 +1,7 @@
-module Parapet
-  module Service
-    VERSION = "0.0.1"
+module Parapet # :nodoc:
+  module Service # :nodoc:
+    module Version # :nodoc:
+      STRING = '0.0.1'
+    end
   end
 end
