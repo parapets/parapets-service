@@ -1,6 +1,14 @@
 # Parapet::Service
 
-TODO: Write a gem description
+A Parapet Service sets a couple defaults for building services.
+Currently is implemented as a strimed down Rails application 
+template with defaults like:
+
+* HTTP verbs (GET POST PATCH DELETE)
+* JSON response and POST bodies
+* HTTP Caching semantics (ETag, etc)
+* Date versioning (A la Fourquare) ("Accept: application/json; version=YYYYMMDD")
+
 
 ## Installation
 
