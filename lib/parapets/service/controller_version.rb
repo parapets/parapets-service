@@ -1,4 +1,4 @@
-module Parapet
+module Parapets
   module Service
     class ControllerVersion < ActionController::Metal
       abstract!

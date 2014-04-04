@@ -1,12 +1,17 @@
-module Parapet
+require 'parapets/service/versionable'
+require 'parapets/service/controller_version'
+
+module Parapets
   module Service
     class Controller
-      include Parapet::Service::Versionable
+      ACTION = :perform
+
+      include Parapets::Service::Versionable
 
       private
         # Build a Controller class for the given version
-        def build_version(version_id,options,&block)
-          superclass = options.fetch(:extend){ Parapet::Service::ControllerVersion }
+        def self.build_version(version_id,options,&block)
+          superclass = options.fetch(:extend){ Parapets::Service::ControllerVersion }
           includes = Array(options[:includes])
 
           klass = Class.new(superclass)
@@ -15,7 +20,7 @@ module Parapet
             klass.send :include, include
           end
 
-          klass.send :define_method, :call, &block
+          klass.send :define_method, ACTION, &block
 
           klass
         end
@@ -28,9 +33,9 @@ module Parapet
 
         # Dispatch the Rack request to the actual controller
         def call(env)
-          request = Parapet::Service::Request.new(env)
+          request = Parapets::Service::Request.new(env)
 
-          version(request.version).action(:call, Parapet::Service::Request).call(env)
+          version(request.version).action(:call, Parapets::Service::Request).call(env)
         end
       end
     end

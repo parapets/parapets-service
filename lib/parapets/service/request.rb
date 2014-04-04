@@ -1,4 +1,4 @@
-module Parapet
+module Parapets
   module Service
     class Request < ActionDispatch::Request
       def request_version

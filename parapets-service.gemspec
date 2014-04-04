@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'parapet/service/version'
+require 'parapets/service/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "parapet-service"
-  spec.version       = Parapet::Service::Version::STRING
+  spec.name          = "parapets-service"
+  spec.version       = Parapets::Service::Version::STRING
   spec.authors       = ["Seba Gamboa"]
   spec.email         = ["me@sagmor.com"]
   spec.summary       = %q{TODO: Write a short summary. Required.}

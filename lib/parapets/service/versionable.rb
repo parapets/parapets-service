@@ -1,4 +1,4 @@
-module Parapet
+module Parapets
   module Service
     module Versionable
       extend ActiveSupport::Concern
