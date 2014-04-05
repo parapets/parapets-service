@@ -1,3 +1,5 @@
+require 'action_controller'
+
 module Parapets
   module Service
     class ControllerVersion < ActionController::Metal

@@ -1,3 +1,5 @@
+require 'active_support/concern'
+
 module Parapets
   module Service
     module Versionable
@@ -12,7 +14,7 @@ module Parapets
           end
 
           # Find the actual implemented version_id
-          actual_version_id = versions_ids.revert.find{ |id| id <= version_id }
+          actual_version_id = versions_ids.reverse.find{ |id| id <= version_id }
 
           # Return the compatible version
           versions[actual_version_id]
