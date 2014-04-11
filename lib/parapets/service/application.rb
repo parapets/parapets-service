@@ -5,26 +5,24 @@ require 'parapets/service/application/default_middleware_stack'
 
 module Parapets
   module Service
-    # We can't subclass Rails::Application without setting Rails.application
-    Application = Rails::Application
-
-    # The idea is to mimic a Rails app and this is the fastest way.
-    # Might change it in the future
-    class Application
-      def default_middleware_stack
-        Parapets::Service::DefaultMiddlewareStack.new(self, config, paths).build_stack
-      end
-
-      def routes
-        @routes ||= Parapets::Service::Routing::RouteSet.new
-        @routes.append(&Proc.new) if block_given?
-        @routes
-      end
-
+    module Application
+      protected
+        def default_middleware_stack_builder_class
+          Parapets::Service::Application::DefaultMiddlewareStack
+        end
     end
 
     class << self
-      delegate :application, :root, :env, to: Rails
+
+      def Application(&block)
+        Parapets::Railties.Application do
+          include Parapets::Service::Application
+
+          instance_eval(&block)
+        end
+      end
+
     end
+
   end
 end

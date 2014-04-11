@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Parapets::Service::Version::STRING
   spec.authors       = ["Seba Gamboa"]
   spec.email         = ["me@sagmor.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Service arquitecture design framework}
+  spec.description   = %q{A Parapet Service sets a couple defaults for building services.}
+  spec.homepage      = "https://github.com/parapets/parapets-service"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -18,10 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "multi_json", "~> 1.9.2"
-  spec.add_dependency "railties", "~> 4.0.4"
-  spec.add_dependency "rake"
+  spec.add_dependency "parapets-railties"
 
-  spec.add_development_dependency "bundler", "~> 1.5"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec", '3.0.0.beta2'
 end
