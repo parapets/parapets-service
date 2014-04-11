@@ -13,3 +13,4 @@ end
 
 gem 'parapets-railties', path_or_repo('../parapets-railties', 'parapets/parapets-railties')
 
+gem "codeclimate-test-reporter", group: :test, require: nil
