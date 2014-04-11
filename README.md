@@ -1,6 +1,8 @@
 # Parapets::Service
 
 [![Build Status](https://travis-ci.org/parapets/parapets-service.svg?branch=master)](https://travis-ci.org/parapets/parapets-service)
+[![Code Climate](https://codeclimate.com/github/parapets/parapets-service.png)](https://codeclimate.com/github/parapets/parapets-service)
+[![Coverage](https://codeclimate.com/github/parapets/parapets-service/coverage.png)](https://codeclimate.com/github/parapets/parapets-service)
 
 A Parapet Service sets a couple defaults for building services.
 Currently is implemented as a strimed down Rails application 
